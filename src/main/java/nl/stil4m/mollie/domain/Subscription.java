@@ -1,5 +1,7 @@
 package nl.stil4m.mollie.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.Date;
 
 public class Subscription {
@@ -19,7 +21,20 @@ public class Subscription {
     private Date cancelledDatetime;
     private Links links;
 
-    public Subscription(String resource, String id, String customerId, String mode, Date createdDatetime, String status, Double amount, Integer times, String interval, Date startDate, String description, String method, Date cancelledDatetime, Links links) {
+    public Subscription(@JsonProperty("resource") String resource,
+                        @JsonProperty("id") String id,
+                        @JsonProperty("customerId") String customerId,
+                        @JsonProperty("mode") String mode,
+                        @JsonProperty("createdDatetime") Date createdDatetime,
+                        @JsonProperty("status") String status,
+                        @JsonProperty("amount") Double amount,
+                        @JsonProperty("times") Integer times,
+                        @JsonProperty("interval") String interval,
+                        @JsonProperty("startDate") Date startDate,
+                        @JsonProperty("description") String description,
+                        @JsonProperty("method") String method,
+                        @JsonProperty("cancelledDatetime") Date cancelledDatetime,
+                        @JsonProperty("links") Links links) {
         this.resource = resource;
         this.id = id;
         this.customerId = customerId;

@@ -1,5 +1,7 @@
 package nl.stil4m.mollie.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.annotation.Nonnull;
 import java.util.Date;
 import java.util.Optional;
@@ -9,6 +11,7 @@ public class CreateSubscription {
     private final Double amount;
     private final Optional<Integer> times;
     private final String interval;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private final Date startDate;
     private final String description;
     private final Optional<String> method;
