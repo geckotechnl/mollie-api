@@ -32,6 +32,7 @@ public class Payment {
     private final String locale;
     private final String countryCode;
     private final String expiryPeriod;
+    private final Optional<String> subscriptionId;
     private final Optional<String> mandateId;
     private final Optional<Boolean> canBeCancelled;
 
@@ -58,6 +59,7 @@ public class Payment {
                    @JsonProperty("countryCode") String countryCode,
                    @JsonProperty("expiryPeriod") String expiryPeriod,
                    @JsonProperty("mandateId") Optional<String> mandateId,
+                   @JsonProperty("subscriptionId") Optional<String> subscriptionId,
                    @JsonProperty("canBeCancelled") Optional<Boolean> canBeCancelled) {
         this.resource = resource;
         this.id = id;
@@ -82,6 +84,7 @@ public class Payment {
         this.countryCode = countryCode;
         this.expiryPeriod = expiryPeriod;
         this.mandateId = mandateId;
+        this.subscriptionId = subscriptionId;
         this.canBeCancelled = canBeCancelled;
     }
 
@@ -175,6 +178,10 @@ public class Payment {
 
     public Optional<String> getMandateId() {
         return mandateId;
+    }
+
+    public Optional<String> getSubscriptionId() {
+        return subscriptionId;
     }
 
     public Optional<Boolean> geCanBeCancelled() {

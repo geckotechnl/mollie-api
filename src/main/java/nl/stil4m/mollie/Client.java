@@ -1,14 +1,6 @@
 package nl.stil4m.mollie;
 
-import nl.stil4m.mollie.concepts.CustomerPayments;
-import nl.stil4m.mollie.concepts.Customers;
-import nl.stil4m.mollie.concepts.Issuers;
-import nl.stil4m.mollie.concepts.CustomerMandates;
-import nl.stil4m.mollie.concepts.Methods;
-import nl.stil4m.mollie.concepts.Payments;
-import nl.stil4m.mollie.concepts.Refunds;
-import nl.stil4m.mollie.concepts.PaymentRefunds;
-import nl.stil4m.mollie.concepts.Status;
+import nl.stil4m.mollie.concepts.*;
 
 public class Client {
 
@@ -55,5 +47,9 @@ public class Client {
 
     public CustomerMandates customerMandates(String customerId) {
         return dynamicClient.customerMandates(apiKey, customerId);
+    }
+
+    public Subscriptions subscriptions(String customerId) {
+        return dynamicClient.subscriptions(apiKey, customerId);
     }
 }
